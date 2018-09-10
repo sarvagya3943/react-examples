@@ -19,11 +19,12 @@ const todoApp = (state = initialState , action) => {
         case ADD_TODO :
             return {...state , todos : [...state.todos , {
                 text : action.text ,
-                completed : false
+                completed : false , 
+                id : action.id 
             }]} ;
         case TOGGLE_TODO :
-            return {...state , todos : state.todos.map((todo,index) => {
-                if(index === action.index) return {...todo , completed : !todo.completed} ;
+            return {...state , todos : state.todos.map(todo => {
+                if(todo.id === action.id) return {...todo , completed : !todo.completed} ;
                 return todo ;
             }) } ;
         default :

@@ -1,12 +1,13 @@
 import React from 'react'
+import { FormControlLabel, Checkbox } from '@material-ui/core';
 
 const Todo = ({ onClick , completed , text }) => (
-    <li className="list-item" style={{
-        textDecoration: completed ? 'line-through' : 'none'
-    }}>
-        {text}
-        <button className="btn" id="toggleButton" onClick={onClick}>Toggle</button>
-    </li>
+    <FormControlLabel 
+        control={<Checkbox onChange={onClick} checked={completed} />}
+        label = {text} 
+        style={{marginLeft : 100 , width : '100%'}}
+    />
+
 ) ;
 
 export default Todo ;

@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button'
 class App extends Component {
     render() {
         return (
-            <div>
+            <div style={{height : '100%' , width : '100%'}}>
                 <AppBar>
                     <Toolbar>
                         <Button><Link to="/counter" style={{color : 'white' , textDecoration : 'none'}}>Counter</Link></Button>

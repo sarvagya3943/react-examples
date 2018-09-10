@@ -1,11 +1,8 @@
 import React from 'react'
+import { Button } from '@material-ui/core';
 
 const Link = ({ onClick , active , children }) => (
-    <button className="btn"
-        onClick={onClick}
-        disabled={active}>
-        {children}
-    </button>
+    <Button variant={active ? 'raised' : 'default'} raised={active} color="secondary" onClick={e => {onClick();}}>{children}</Button>
 ) ;
 
 export default Link ;
